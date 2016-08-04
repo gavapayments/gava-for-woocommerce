@@ -118,9 +118,13 @@ class WC_Gava extends WC_Payment_Gateway {
 	/**
 	 * Receipt Page
 	 *
+	 * @todo Redirect user soon as they hit this page
 	 */
 	function receipt_page($order)
 	{
+		global $woocommerce
+
+		$woocommerce->cart->empty_cart();
 		echo '<p>'.__($this->instructionLabel, 'gava').'</p>';
 		$redirect = $this->createGavaCheckout($order);
 		echo '<div><a class="button" href="'.$redirect.'">'.__($this->buttonLabel, 'gava').'</a></div>';

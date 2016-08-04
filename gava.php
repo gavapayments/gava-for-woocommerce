@@ -122,7 +122,7 @@ class WC_Gava extends WC_Payment_Gateway {
 	 */
 	function receipt_page($order)
 	{
-		global $woocommerce
+		global $woocommerce;
 
 		$woocommerce->cart->empty_cart();
 		echo '<p>'.__($this->instructionLabel, 'gava').'</p>';

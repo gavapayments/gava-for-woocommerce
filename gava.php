@@ -410,7 +410,7 @@ class WC_Gava extends WC_Payment_Gateway {
         		sprintf( __(
         			'Order %s has had an amount mismatch. Please review in Gava (checkout ID %s) .', 'woocommerce'),
         			$order->get_order_number(),
-        			$checkout->id
+        			$checkout->checkoutId
         		)
 			);
 
@@ -431,7 +431,7 @@ class WC_Gava extends WC_Payment_Gateway {
         update_post_meta($order->id, 'Transaction code', $checkout->transactionCode);
 
 		$order->payment_complete();
-		$order->add_order_note("Gava payment successful<br/>Unique Checkout ID: ".$checkout->id);
+		$order->add_order_note("Gava payment successful<br/>Unique Checkout ID: ".$checkout->checkoutId);
 	}
 
 	function floatsEqual($a, $b)

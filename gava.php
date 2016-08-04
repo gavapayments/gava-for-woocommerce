@@ -121,7 +121,8 @@ class WC_Gava extends WC_Payment_Gateway {
 	 */
 	function receipt_page($order)
 	{
-		echo '<p>'.__($instructionLabel, 'gava').'</p>';
+		echo '<p>'.__($this->instructionLabel, 'gava').'</p>';
+		$redirect = $this->createGavaCheckout($order);
 		echo '<div><a class="button" href="'.$redirect.'">'.__($this->buttonLabel, 'gava').'</a></div>';
 	}
 

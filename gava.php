@@ -356,7 +356,7 @@ class WC_Gava extends WC_Payment_Gateway {
 		//Listen for callback, validate with server, close checkout
 		$callback = json_decode(file_get_contents('php://input'));
 
-		if (!$callback) gava_callback_error('Missing parameters');
+		if (!$callback) $this->callbackError('Missing parameters');
 
 		$expectedProperties = array(
 			'checkoutId',

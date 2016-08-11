@@ -3,7 +3,7 @@
 Plugin Name: Gava Payment Gateway For WooCommerce
 Plugin URI: https://pay4app.com
 Description: Receive mobile money payments with Gava
-Version: 0.1.5
+Version: 0.1.7
 Author: Sam Takunda
 Author URI: https://github.com/ihatehandles
 */

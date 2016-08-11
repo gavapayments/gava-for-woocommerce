@@ -268,7 +268,7 @@ class WC_Gava extends WC_Payment_Gateway {
 		$payload['signature'] = $this->sign($payload);
 
 		//create checkout, redirect to it
-		$endpoint = rtrim($this->checkoutUrl, '/') . '/create?return_checkout_url';
+		$endpoint = rtrim($this->checkoutUrl, '/') . '/create';
 		$response = wp_remote_post($endpoint, array('body' => $payload));
 
 		if (is_wp_error($response)) {

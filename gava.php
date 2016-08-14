@@ -173,7 +173,7 @@ class WC_Gava extends WC_Payment_Gateway {
 	/**
 	 * Fetches checkout with given hash.
 	 * A return of false generally means the checkout is not valid to us
-	 * Will exit with error for the ither scenarios
+	 * Will exit with error for the other scenarios
 	 *
 	 * @param string $hash Checkout hash
 	 * return object|false
@@ -186,7 +186,7 @@ class WC_Gava extends WC_Payment_Gateway {
 		$response = wp_remote_get($endpoint);
 
 		if (is_wp_error($response)) {
-			return false;
+			$this->callbackError('Fetch request failed');
 		}
 
 		$responseCode = wp_remote_retrieve_response_code($response);
@@ -255,7 +255,7 @@ class WC_Gava extends WC_Payment_Gateway {
 
 		$order = new WC_Order($orderId);
 		
-		$redirect_url = add_query_arg( 'utm_nooverride', '1', $this->get_return_url($order));
+		$redirect_url = add_query_arg('utm_nooverride', '1', $this->get_return_url($order));
 		$return_url = add_query_arg('utm_nooverride', '1', $this->get_return_url($order));
 
 		$payload = array(

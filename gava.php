@@ -143,16 +143,16 @@ class WC_Gava extends WC_Payment_Gateway {
 		$cartURL = $woocommerce->cart->get_cart_url();
 		//$woocommerce->cart->get_checkout_url();
 
-		$cartURL = "javascript: alert('ToDo');";
 		echo "<p>Failed to create checkout. Please contact support, or <a href='".$cartURL."'>click here</a> ".
 			"to return to the website and try again</p>";
 
 		
 		//Just gonna leave this here
+		/*
 		echo '<p>Error details: </p><pre>';
 		print_r($error);
 		echo '</pre>';
-		
+		*/
 
 		exit();
 	}
